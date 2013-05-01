@@ -5,6 +5,7 @@ class Shot(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load("assets/images/shot.png")
         self.sound = pygame.mixer.Sound("assets/sounds/shot.wav")
+        self.explosion = pygame.mixer.Sound("assets/sounds/explosion.wav")
         self.playSound()
         self.x = player.getCoordinates()[0] + player.returnImage().get_width() / 2 -3
         self.y = screen.get_height() - player.returnImage().get_height()
@@ -31,3 +32,6 @@ class Shot(pygame.sprite.Sprite):
 
     def playSound(self):
         self.sound.play()
+
+    def playExplosion(self):
+        self.explosion.play()

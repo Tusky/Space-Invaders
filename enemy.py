@@ -2,12 +2,12 @@ import pygame
 import random
 
 class Enemy(pygame.sprite.Sprite):
-    def __init__(self, screen):
+    def __init__(self, screen, x, y):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.transform.scale(pygame.image.load("assets/images/enemy.png"), (32,32))
         self.maxScreen = screen.get_width()
-        self.y = 20
-        self.x = random.randint(0,self.maxScreen)
+        self.y = y
+        self.x = x
         self.rect=self.image.get_rect()
         self.rect.center = self.getCoordinates()
 
